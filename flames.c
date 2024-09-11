@@ -73,7 +73,7 @@ void main()
         break;
     case 'a':printf("you have affection");
         break;
-    case 'm':printf("you get marriage ");
+    case 'm':printf("you are getting marriage ");
         break;
     case 'e':printf("you are enemies ");
         break;
