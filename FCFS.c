@@ -20,11 +20,20 @@ int main(){
                         printf("Enter process %d Arrival Time :: ",pid[i]);
                         scanf("%d",&at[i]);
                 }
-        printf("|        Process Id       |       Burst Time       |       Arrival Time      |\n");
-        printf("|----------------------------------------------------------------------------|\n");
+                ct[0]=0;
+                for(int i=0;i<n;i++){
+                        ct[i+1]=ct[i]+bt[i];
+                        tat[i]=ct[i+1]-at[i];
+                        wt[i]=tat[i]-bt[i];
+                        s=s+wt[i];
+                }
+        printf("|   Process Id   |   Burst Time   |   Arrival Time   |   Complete Time   |   Turnaround Time   |   Waiting Time   |\n");
+        printf("|----------------|----------------|------------------|-------------------|---------------------|------------------|\n");
         for(int i=0;i<n;i++){
-                printf("|%25d|%24d|%25d|\n",pid[i],bt[i],at[i]);
+                printf("|%16d|%16d|%18d|%19d|%21d|%18d|\n",pid[i],bt[i],at[i],ct[i+1],tat[i],wt[i]);
         }
+        avg=(float)s/n;
+        printf("Average Waiting Time using First Come First Serve Technique :: %.2f",avg);
         }
         else{
          ct[0]=0;
@@ -38,7 +47,7 @@ int main(){
         for(int i=0;i<n;i++){
                 printf("|%25d|%24d|%26d|%25d|\n",pid[i],bt[i],ct[i+1],wt[i]);
         }
-        avg
+        avg=s/n;
         printf("Average Waiting Time using First Come First Serve Technique :: %.2f",avg);
         }
         printf("\n"); 
