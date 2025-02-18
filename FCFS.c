@@ -47,7 +47,7 @@ int main(){
         for(int i=0;i<n;i++){
                 printf("|%25d|%24d|%26d|%25d|\n",pid[i],bt[i],ct[i+1],wt[i]);
         }
-        avg=s/n;
+        avg=(float)s/n;
         printf("Average Waiting Time using First Come First Serve Technique :: %.2f",avg);
         }
         printf("\n"); 
